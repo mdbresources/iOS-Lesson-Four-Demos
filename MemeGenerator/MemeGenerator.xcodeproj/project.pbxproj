@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F40170E2409CAC900F0C7EA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F40170D2409CAC900F0C7EA /* APIManager.swift */; };
 		54FDB79D2407CD27004F9B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FDB79C2407CD27004F9B9D /* AppDelegate.swift */; };
 		54FDB79F2407CD27004F9B9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FDB79E2407CD27004F9B9D /* SceneDelegate.swift */; };
 		54FDB7A12407CD27004F9B9D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FDB7A02407CD27004F9B9D /* MainVC.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F40170D2409CAC900F0C7EA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		54FDB7992407CD27004F9B9D /* MemeGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54FDB79C2407CD27004F9B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54FDB79E2407CD27004F9B9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				54FDB7B62407CE7A004F9B9D /* Meme.swift */,
+				1F40170D2409CAC900F0C7EA /* APIManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				54FDB7BC2407D3F3004F9B9D /* MainVC-TableView.swift in Sources */,
 				54FDB79D2407CD27004F9B9D /* AppDelegate.swift in Sources */,
 				54FDB79F2407CD27004F9B9D /* SceneDelegate.swift in Sources */,
+				1F40170E2409CAC900F0C7EA /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2H55ZZJC9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MemeGenerator/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -347,7 +351,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2H55ZZJC9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MemeGenerator/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

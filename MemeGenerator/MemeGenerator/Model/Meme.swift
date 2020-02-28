@@ -8,7 +8,31 @@
 
 import Foundation
 
-struct MemeKeys: Decodable {
+class MemeRequest: Decodable {
+    let success: Bool
+    let memes: [Meme]
+    
+    enum CodingKeys:String, CodingKey {
+        case success, data
+    }
+    
+    enum DataKeys: String, CodingKey {
+        case memes
+    }
+
+    
+    required init(from decoder: Decoder) throws {
+        let valueContainer = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.success = try valueContainer.decode(Bool.self, forKey: .success)
+        
+        let memeContainer = try valueContainer.nestedContainer(keyedBy: DataKeys.self, forKey: .data)
+        
+        self.memes = try memeContainer.decode([Meme].self, forKey: .memes)
+    }
+}
+
+struct Meme: Decodable {
     let id: String
     let name: String
     let url: String
@@ -16,13 +40,3 @@ struct MemeKeys: Decodable {
     let height: Int
     let box_count: Int
 }
-
-struct MiddleMemeKey: Decodable {
-    let memes: [MemeKeys]
-}
-
-struct OuterMemeKeys: Decodable {
-    let success: Bool
-    let data: MiddleMemeKey
-}
-

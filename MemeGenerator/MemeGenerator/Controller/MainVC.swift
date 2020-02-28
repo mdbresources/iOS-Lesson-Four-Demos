@@ -11,40 +11,20 @@ import UIKit
 
 
 class MainVC: UIViewController {
-    var memes: [MemeKeys] = []
+    var memes: [Meme] = []
     @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        generateMemes()
-    }
-
-    func generateMemes() {
-        
-        var semaphore = DispatchSemaphore (value: 0)
-
-        var request = URLRequest(url: URL(string: "https://api.imgflip.com/get_memes")!,timeoutInterval: Double.infinity)
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-
-        request.httpMethod = "GET"
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-          guard let data = data else {
-            //print(String(describing: error))
-            return
-          }
-          //print(String(data: data, encoding: .utf8)!)
-          semaphore.signal()
+        APIManager.getMemes {
+            memes in
             
-            let memeOuter = try! JSONDecoder().decode(OuterMemeKeys.self, from: data)
-            self.memes = memeOuter.data.memes
-            self.tableView.reloadData()
-            
+            self.memes = memes
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
-
-        task.resume()
-        semaphore.wait()
     }
 }
 
