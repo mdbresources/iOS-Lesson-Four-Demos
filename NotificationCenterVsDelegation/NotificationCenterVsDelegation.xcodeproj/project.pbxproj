@@ -321,13 +321,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2H55ZZJC9;
+				DEVELOPMENT_TEAM = 72Z67Z899J;
 				INFOPLIST_FILE = NotificationCenterVsDelegation/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.patrickhaoy.NotificationCenterVsDelegation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickhaoy.NotificationCenterVDelegation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -339,7 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2H55ZZJC9;
+				DEVELOPMENT_TEAM = CZ787F8MST;
 				INFOPLIST_FILE = NotificationCenterVsDelegation/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

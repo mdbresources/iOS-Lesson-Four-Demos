@@ -13,6 +13,10 @@ class FavoritesVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
     var favorites: [String] = []
     @IBOutlet weak var tableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favorites.count
     }
@@ -25,11 +29,9 @@ class FavoritesVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
     
     func itemChecked(_ item: String) {
         self.favorites.append(item)
-        self.tableView.reloadData()
     }
     
     func itemUnchecked(_ item: String) {
         self.favorites = self.favorites.filter({$0 != item})
-        self.tableView.reloadData()
     }
 }

@@ -13,7 +13,7 @@ protocol PeopleVCDelegate {
     func itemUnchecked(_ item: String)
 }
 
-class PeopleVC: UIViewController, UITableViewDataSource, UITableViewDelegate, AddCellOwner {
+class PeopleVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, AddCellOwner {
     
     var people: [String] = ["Rini", "Maggie", "Olivia", "Juliet", "Nick", "James", "Ian", "Michael", "Geo", "Colin", "Patrick", "Anmol", "Melanie", "Niky"]
     var selected: [Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
@@ -60,7 +60,8 @@ class PeopleVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Ad
         } else {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "AddCell", for: indexPath) as! AddItemTableViewCell
  
-            cell.owner = self as? AddCellOwner
+            cell.owner = self
+            cell.textField.delegate = self
             
             return cell
         }
@@ -80,5 +81,10 @@ class PeopleVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Ad
             self.tableView.cellForRow(at: indexPath)?.accessoryType = .none
             self.delegate?.itemUnchecked(self.people[indexPath.row])
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
